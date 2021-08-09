@@ -1,0 +1,7 @@
+node_modules
+app
+screenshots
+allure-report
+allure-results
+.env
+mochawesome-report
