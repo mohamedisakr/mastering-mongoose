@@ -10,6 +10,3 @@ const doc = new Model({ email: "test@gmail.com" });
 
 console.log(doc.email); // 'test [at] gmail.com'
 console.log(doc.get("email")); // 'test [at] gmail.com'
-
-// Make sure you don't forget to pass `null` as the 2nd parameter.
-doc.get("email", null, { getters: false }); // 'test@gmail.com'
