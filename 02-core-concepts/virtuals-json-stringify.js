@@ -43,3 +43,5 @@ const myObject = {
 // `{"prop":42}`. That is because `JSON.stringify()` uses the result
 // of the `toJSON()` function.
 console.log(JSON.stringify({ prop: myObject }));
+
+mongoose.set("toJSON", { virtuals: true });
