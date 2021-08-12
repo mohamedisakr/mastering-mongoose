@@ -65,13 +65,17 @@ console.log(`mongoose1.connections[1] === conn : ${condition}`);
 */
 
 const mongoose = require("mongoose");
+
 const conn1 = mongoose.createConnection("mongodb://localhost:27017/db1", {
   useNewUrlParser: true,
 });
+
 const conn2 = mongoose.createConnection("mongodb://localhost:27017/db2", {
   useNewUrlParser: true,
 });
+
 // Will store data in the 'db1' database's 'tests' collection
 const Model1 = conn1.model("Test", mongoose.Schema({ name: String }));
+
 // Will store data in the 'db2' database's 'tests' collection
 const Model2 = conn2.model("Test", mongoose.Schema({ name: String }));
