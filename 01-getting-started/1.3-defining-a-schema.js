@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
-const { connectToDB } = require("./1.2-connecting-to-mongodb");
+require("./1.2-connecting-to-mongodb");
 
 const productSchema = new Schema({
   // A product has two properties: `name` and `price`
@@ -22,7 +22,7 @@ const addNewProduct = async () => {
   await product.save();
 };
 
-connectToDB();
+// connectToDB();
 addNewProduct();
 
 // product.name; // 'iPhone'
