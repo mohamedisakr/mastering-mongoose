@@ -22,10 +22,4 @@ const addNewProduct = async () => {
   await product.save();
 };
 
-// connectToDB();
 addNewProduct();
-
-// product.name; // 'iPhone'
-// product.price; // 800, Mongoose converted this to a number
-// // undefined, Mongoose removes props that aren't in the schema
-// product.notInSchema;
