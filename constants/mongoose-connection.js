@@ -3,7 +3,8 @@
 
 require("dotenv").config({ path: "../.env" });
 const { env } = process;
-const uri = `${env.PROTOCOL}${env.HOST}${env.PORT}${env.DATABASE_NAME}`;
+// "mongodb://localhost:27017/mydb"
+const uri = `${env.PROTOCOL}://${env.HOST}:${env.PORT}/${env.DATABASE_NAME}`;
 
 const connectionOptions = {
   useNewUrlParser: true,
