@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
+require("../01-getting-started/1.2-connecting-to-mongodb");
 
 // const schema = new Schema({
 //   name: {
@@ -35,6 +36,7 @@ const { Schema, model } = mongoose;
 // // No error, `enum` does nothing for `type: Number`
 // await doc.validate();
 
+/*
 const schema = new Schema({
   name: {
     type: String,
@@ -51,3 +53,28 @@ await doc.validate().catch((error) => {
   // ValidatorError: Path `name` is required.
   error.errors["name"];
 });
+*/
+
+// =================================
+
+const movieSchema = new Schema({
+  title: { type: String },
+  category: { type: Number, enum: [1, 2, 3] },
+});
+const Movie = model("movie", movieSchema);
+
+const addMovie = async () => {
+  const movie = { title: "movie 1", category: 100 };
+  const newMovie = new Movie(movie);
+  await newMovie.save().catch((error) => {
+    // ValidationError:  movie validation failed: category: `100` is not a valid enum
+    // value for path `category`.
+    console.log(`The type of error is : ${typeof error}`);
+    console.log(error);
+
+    // console.log(error.errors["category"]); // ValidatorError: `100` is not a valid enum value for path `category`.
+    // console.log(Object.keys(error.errors)); // ['category']
+  });
+};
+
+addMovie();

@@ -21,11 +21,16 @@ console.log(`doc1.objectid === doc2.objectid : ${condition}`);
 
 condition = doc1.objectid == doc2.objectid; // false
 console.log(`doc1.objectid == doc2.objectid : ${condition}`);
-*/
+
+condition = doc1.objectid.toString() == doc2.objectid.toString(); // true
+console.log(
+  `doc1.objectid.toString() == doc2.objectid.toString() : ${condition}`
+);
+// */
 
 // -------------------
 
-/*
+// /*
 const str = "5d124083fc741d44eca250fd";
 const s = Schema({ objectid: ObjectId }, { _id: false });
 
@@ -52,7 +57,7 @@ condition = doc1.objectid == doc2.objectid; // true
 console.log(`doc1.objectid == doc2.objectid : ${condition}`);
 
 assert.deepEqual(doc1.toObject(), doc2.toObject()); // passes
-*/
+// */
 
 /*
 const accountSchema = Schema({ balance: mongoose.Decimal128 });
@@ -68,6 +73,7 @@ account.balance.toString(); // 0.3
 account.balance + 0.5;
 */
 
+/*
 const accountSchema = Schema({
   balance: {
     type: mongoose.Decimal128,
@@ -84,3 +90,4 @@ const Account = model("Account", accountSchema);
 const account = new Account({ balance: 0.1 });
 account.balance += 0.2;
 console.log(account.balance); // 0.3
+*/
