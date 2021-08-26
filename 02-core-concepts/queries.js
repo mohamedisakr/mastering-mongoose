@@ -8,7 +8,7 @@ const userSchema = Schema({ email: String });
 
 const User = model("user", userSchema);
 
-const query = User.findOne();
+let query = User.findOne();
 console.log(`op property is ${query.op}`); // 'findOne'
 
 let instance = query instanceof mongoose.Query; // true
@@ -25,9 +25,10 @@ console.log(`query instanceof User.Query : ${instance}`);
 
 // const query = User.findOne();
 
+/*
 // Equivalent to `Model.updateOne({ name: 'Jean-Luc Picard' },
 // { $set: { age: 59 } })`
-const query = User.find({ name: "Jean-Luc Picard" }).updateOne(
+query = User.find({ name: "Jean-Luc Picard" }).updateOne(
   {},
   { $set: { age: 59 } }
 );
@@ -40,3 +41,4 @@ const promise2 = User.findOne().then((doc) => doc);
 
 // Equivalently, `await` calls `then()` under the hood
 const doc = await User.findOne();
+*/
