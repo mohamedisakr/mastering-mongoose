@@ -44,4 +44,5 @@ const myObject = {
 // of the `toJSON()` function.
 console.log(JSON.stringify({ prop: myObject }));
 
+// configure the toJSON schema option globally
 mongoose.set("toJSON", { virtuals: true });
