@@ -5,8 +5,8 @@
 // } = require("../01-getting-started/1.2-connecting-to-mongodb");
 
 // // Mongoose exports an instance of the `Mongoose` class
-// let condition = mongoose instanceof mongoose.Mongoose; // true
-// console.log(`mongoose instanceof mongoose.Mongoose : ${condition}`);
+let condition = mongoose instanceof mongoose.Mongoose; // true
+console.log(`mongoose instanceof mongoose.Mongoose : ${condition}`);
 
 /*
 const { Mongoose } = require("mongoose");

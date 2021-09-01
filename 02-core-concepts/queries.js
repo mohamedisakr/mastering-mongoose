@@ -25,7 +25,6 @@ console.log(`query instanceof User.Query : ${instance}`);
 
 // const query = User.findOne();
 
-/*
 // Equivalent to `Model.updateOne({ name: 'Jean-Luc Picard' },
 // { $set: { age: 59 } })`
 query = User.find({ name: "Jean-Luc Picard" }).updateOne(
@@ -33,6 +32,7 @@ query = User.find({ name: "Jean-Luc Picard" }).updateOne(
   { $set: { age: 59 } }
 );
 
+/*
 // The `exec()` function executes the query and returns a promise.
 const promise1 = User.findOne().exec();
 
