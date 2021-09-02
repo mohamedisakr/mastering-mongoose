@@ -22,6 +22,18 @@ await Model.init();
 const indexes = await Model.listIndexes();
 */
 
+const opts = { autoIndex: false };
+const schema = Schema({ name: { type: String, index: true } }, opts);
+const Model = mongoose.model("Test", schema);
+await Model.init();
+let indexes = await Model.listIndexes();
+indexes.length; // 1
+await Model.createIndexes();
+indexes = await Model.listIndexes();
+indexes.length; // 2
+
+// ===========================================
+
 let schema = Schema({ name: { type: String, index: true } });
 let Model = mongoose.model("Test", schema);
 await Model.init();

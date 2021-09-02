@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, Types, model, ObjectId, Query } = mongoose;
-const {
-  connectToDB,
-} = require("../01-getting-started/1.2-connecting-to-mongodb");
+require("../01-getting-started/1.2-connecting-to-mongodb");
 
 let schema = Schema({ firstName: String, lastName: String });
 // Build an index on `lastName` in reverse order
@@ -36,7 +34,6 @@ const sortByLastName = async () => {
   console.log(`Sort by last name takes : ${elapsed}`); // Approximately 641, about 15% faster
 };
 
-connectToDB();
 add200kUsers();
 sortByFirstName();
 sortByLastName();
